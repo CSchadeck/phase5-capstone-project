@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useResolvedPath } from "react-router-dom";
 
 export default function Navbar() {
     return <nav className="navbar">
@@ -14,6 +14,7 @@ export default function Navbar() {
 }
 
 function CustomLink({ to, children, ...props}) {
+    const resolvedPath = useResolvedPath(to)
     const path = window.location.pathname
     return (
         <li className={path === to ? "active" : ""}> 
