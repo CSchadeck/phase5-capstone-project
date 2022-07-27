@@ -2,15 +2,18 @@ import React from "react";
 import { Link, useResolvedPath } from "react-router-dom";
 
 export default function Navbar() {
-    return <nav className="navbar">
-        <Link to="/" className="site_title">CondoPet</Link>
-        <ul>
-            <CustomLink  to="/Requests">Requests</CustomLink>
-            <CustomLink  to="/Members">Members</CustomLink>
-            <CustomLink to="/Post">Post</CustomLink>
-            <CustomLink to="/Login">Login</CustomLink>
-        </ul>
-    </nav>
+    return <>
+        <nav className="navbar">
+            <Link to="/" className="site_title">CondoPet</Link>
+            <ul>
+                <CustomLink  to="/Requests">Requests</CustomLink>
+                <CustomLink  to="/Members">Members</CustomLink>
+                <CustomLink to="/Post">Post</CustomLink>
+                <CustomLink to="/Login">Login</CustomLink>
+            </ul>
+        </nav>
+    </>
+    
 }
 
 function CustomLink({ to, children, ...props}) {

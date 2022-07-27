@@ -9,28 +9,7 @@ import { Route, Routes } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 
 function App() {
-  const [user, setUser] = useState(null);
-  const [userData, setUserData] = useState({ users: [] });
-
-
-
-  useEffect(() => {
-    fetchUsers()
-  }, []);
-
-
-  function fetchUsers() {
-    return fetch('https://obscure-headland-31666.herokuapp.com/users')
-      .then(res => res.json())
-      .then(data => {
-        console.log(data);
-
-        setUserData(data);
-      })
-  }
-
-
-
+  
   return (
     <>
       <Navbar />
@@ -43,7 +22,8 @@ function App() {
           <Route path="/Login" element={<Login />} />
           <Route path="/SignUp" element={<SignUp />} />
         </Routes>
-      </div> </>
+      </div>
+    </>
   )
 }
 
