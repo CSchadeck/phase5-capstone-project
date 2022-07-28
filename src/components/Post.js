@@ -1,12 +1,35 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import 'react-datepicker/dist/react-datepicker.css';
 
-export default function Post() {
+export default function Post({postRequest, setPostRequest,requestData}) {
+
+
+//post method
+    function submitRequest (e){
+        e.preventDefault()
+        const requestItems = {start_date:startDate, end_date:endDate, title, user_id:5, image, description, accepted, accepted_by}
+        fetch('https://obscure-headland-31666.herokuapp.com/requests', {
+            method:'POST',
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(requestItems)
+        })
+        .then((r) => r.json())
+        .then((postRequest) => {
+            console.log(postRequest)
+            setPostRequest(postRequest)})
+    }
+
 
 
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
+    const [title, setTitle]= useState("")
+    const [username, setUsername] = useState("")
+    const [image, setImage]= useState("")
+    const [description, setDescription]= useState("")
+    const [accepted_by, setAcceptedBy] = useState("")
+    const [accepted, setAccepted] = useState(true)
 
 
     return (
@@ -14,6 +37,8 @@ export default function Post() {
             <form className="form_field" >
 
                 <input
+                value={title}
+                onChange= {(e)=> setTitle(e.target.value)}
                     id="title"
                     className="form_field"
                     type="text"
@@ -22,6 +47,8 @@ export default function Post() {
                 />
 
                 <input
+                value={username}
+                onChange= {(e)=> setUsername(e.target.value)}
                     id="user_id"
                     className="form_field"
                     type="text"
@@ -30,6 +57,8 @@ export default function Post() {
                 />
 
                 <input
+                value={image}
+                onChange= {(e)=> setImage(e.target.value)}
                     id="Image"
                     className="form_field"
                     type="text"
@@ -38,6 +67,7 @@ export default function Post() {
                 />
 
                 <DatePicker
+                value={startDate}
                     placeholderText="Select Start Date"
                     showTimeSelect
                     dateFormat="MMMM d, yyyy h:mmaa"
@@ -50,6 +80,7 @@ export default function Post() {
                     placeholder=" share an image of our pet"
                 />
                 <DatePicker
+                value={endDate}
                     placeholderText="Select End Date"
                     showTimeSelect
                     dateFormat="MMMM d, yyyy h:mmaa"
@@ -59,27 +90,37 @@ export default function Post() {
                     endDate={endDate}
                     minDate={startDate}
                     onChange={date => setEndDate(date)}
+
                 />
 
                 <input
-                    id=""
+                value={description}
+                onChange= {(e)=> setDescription(e.target.value)}
+                    id="description"
                     className="form_field"
                     type="text"
-                    placeholder=""
-                    name=""
+                    placeholder="any specific instructions to share?"
+                    name="description"
                 />
-
+   <input
+                 value={accepted}
+                 onChange= {(e)=> setAccepted(e.target.value)}
+                    id="description"
+                    className="form_field"
+                    type="text"
+                    placeholder="pending"
+                    name="accepted"
+                />
                 <input
-                    id=""
+                 value={accepted_by}
+                 onChange= {(e)=> setAcceptedBy(e.target.value)}
+                    id="description"
                     className="form_field"
                     type="text"
-                    placeholder=""
-                    name=""
+                    placeholder="pending"
+                    name="accepted_by"
                 />
-
-
-
-                <button type="submit">
+                <button type="submit" onClick={submitRequest}>
                     Submit Request
                 </button>
             </form>

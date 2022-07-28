@@ -2,25 +2,26 @@ import React, { useState, useEffect } from "react";
 import RequestCard from "./RequestCard";
 
 
-function Requests() {
+function Requests({requestData}) {
 
-    const [requestData, setRequestData] = useState([]);
+    // const [requestData, setRequestData] = useState([]);
     
-    useEffect(() => {
-        fetch("https://obscure-headland-31666.herokuapp.com/requests")
-        .then((r) => r.json())
-        .then((data) => {
-            setRequestData(data);
-            console.log(requestData)
-        })
-    }, []);
-    console.log(requestData)        
+    // useEffect(() => {
+    //     fetch("https://obscure-headland-31666.herokuapp.com/requests")
+    //     .then((r) => r.json())
+    //     .then((data) => {
+    //         setRequestData(data);
+    //         console.log(requestData)
+    //     })
+    // }, []);
+    // console.log(requestData)        
     
     const renderCard = requestData.map((i) => (
         <RequestCard
             key={i.id}
             title={i.title}
-            user_id={i.user_id}
+            image={i.image}
+            username={i.user.username}
             description={i.description}
             start_date={i.start_date}
             end_date={i.end_date}
