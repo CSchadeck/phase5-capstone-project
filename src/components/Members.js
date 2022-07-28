@@ -16,9 +16,9 @@ export default function Members() {
     const membersArr = members.map((member) => (
         
         <div key={member.id} className="member_card">
-            <h3 className="member_card_">Username: {member.username}</h3>
-            <div className="member_card_">Email: {member.email}</div>
-            <div className="member_card_">Bio: {member.bio}</div>
+            <h3 className="member_card_username">Username: {member.username}</h3>
+            <div className="member_card_email">Email: {member.email}</div>
+            <div className="member_card_bio">Bio: {member.bio}</div>
         </div>
         
     ))

@@ -46,7 +46,7 @@ export default function Login({ setUser }) {
                     placeholder="enter password"
                 />
                 <button type="submit">Login</button>
-                <Link to="/SignUp">Sign Up to be a member!</Link>
+                <Link to="/SignUp">Not a member? Click here to sign up!</Link>
             </form>
         </div>
 

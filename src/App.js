@@ -2,9 +2,11 @@ import Navbar from "./Navbar";
 import Home from "./components/Home";
 import Requests from "./components/Requests";
 import Members from './components/Members';
+import UserProfile from "./components/UserProfile";
 import Post from './components/Post';
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
+
 import { Route, Routes } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 
@@ -32,6 +34,7 @@ function App() {
           <Route path="/Members" element={<Members />} />
           <Route path="/Post" element={<Post postRequest={postRequest} setPostRequest={setPostRequest} requestData={requestData}/>} />
           <Route path="/Login" element={<Login />} />
+        
           <Route path="/SignUp" element={<SignUp />} />
         </Routes>
       </div>
