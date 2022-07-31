@@ -7,7 +7,7 @@ export default function Login({ setUser }) {
 
     function handleSubmit(e) {
         e.preventDefault();
-        fetch("/login", {
+        fetch("https://obscure-headland-31666.herokuapp.com/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

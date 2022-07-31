@@ -8,7 +8,7 @@ export default function Post({postRequest, setPostRequest,requestData}) {
 //post method
     function submitRequest (e){
         e.preventDefault()
-        const requestItems = {start_date:startDate, end_date:endDate, title, user_id:5, image, description, accepted, accepted_by}
+        const requestItems = {start_date:startDate, end_date:endDate, title, user_id:5, image, description}
         fetch('https://obscure-headland-31666.herokuapp.com/requests', {
             method:'POST',
             headers: {"Content-Type": "application/json"},
