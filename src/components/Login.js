@@ -39,8 +39,9 @@ export default function Login({ setUser, env }) {
         <div>
             <form onSubmit={handleSubmit}>
                 <h1>Login</h1>
-                <label htmlFor="username">Username</label>
+                <label  className="login-label" htmlFor="username">Username</label>
                 <input
+                className="login-input"
                     type="text"
                     id="username"
                     autoComplete="off"
@@ -48,8 +49,9 @@ export default function Login({ setUser, env }) {
                     onChange={(e) => setUsername(e.target.value)}
                     placeholder="enter username"
                 />
-                <label htmlFor="password">Password</label>
+                <label  className="login-label" htmlFor="password">Password</label>
                 <input
+                className="login-input"
                     type="password"
                     id="password"
                     autoComplete="current-password"
@@ -58,6 +60,7 @@ export default function Login({ setUser, env }) {
                     placeholder="enter password"
                 />
                 <button className="button"  type="submit">Login</button>
+                <div></div>
                 <Link to="/SignUp">Not a member? Click here to sign up!</Link>
             </form>
         </div>

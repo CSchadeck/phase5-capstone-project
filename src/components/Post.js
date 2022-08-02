@@ -66,7 +66,7 @@ export default function Post({ env }) {
                             id="user_id"
                             className="form-input"
                             type="text"
-                            placeholder="username"
+                            placeholder="Username"
                             name="user_id"
                         />
                     </div>

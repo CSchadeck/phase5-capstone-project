@@ -56,7 +56,7 @@ nav li:hover{
     background-color:  #009f78;
 
 }
-/*Post/Request Form*/
+/* Post/login/signup Form*/
 
 form{
     padding: 2rem;
@@ -68,7 +68,7 @@ form{
     border-radius: 3px;
     box-shadow: 0 15px 35px rgb(50 50 93 / 10%), 0 5px 15px rgba(187, 229, 193, 0.442);
 }
-
+/*Post form */
 .form-block{
     padding: 0;
     border: 0;
@@ -99,18 +99,63 @@ form{
     transition: all 0.25s cubic-bezier(0.4, 0, 1, 1);
 }
 
+/*Login form */
+.login-label{
+    display: inline-block;
+    margin-bottom: .5rem;
+    font-size: .75rem;
+    text-transform: uppercase;
+    touch-action: manipulation;
+  }
+
+.login-input{
+    display: block;
+    padding: 0.5rem 0.75rem;
+    width: 100%;
+    font-size: 1rem;
+    line-height: 1.25;
+    color: #55595c;
+    background-color: #fff;
+    background-image: none;
+    background-clip: padding-box;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid #eee;
+    border-left: 0;
+    border-radius: 3px;
+    transition: all 0.25s cubic-bezier(0.4, 0, 1, 1);
+}
+
+
 
 /*Sig up Form*/
-.sign-up {
+.signup-label{
+    display: inline-block;
+    margin-bottom: .5rem;
+    font-size: .75rem;
+    text-transform: uppercase;
+    touch-action: manipulation;
+  }
 
+.signup-input{
+    display: block;
+    padding: 0.5rem 0.75rem;
+    width: 100%;
+    font-size: 1rem;
+    line-height: 1.25;
+    color: #55595c;
+    background-color: #fff;
+    background-image: none;
+    background-clip: padding-box;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid #eee;
+    border-left: 0;
+    border-radius: 3px;
+    transition: all 0.25s cubic-bezier(0.4, 0, 1, 1);
 }
 
 /*Post/Request page*/
-.requests{
-
-}
-
-
 
 /*Post/Request card*/
 

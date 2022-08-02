@@ -38,8 +38,9 @@ function SignUp({ setUser, env }) {
     <div>
       <form onSubmit={handleSubmit}>
         <h1>Sign Up</h1>
-        <label htmlFor="username">Username</label>
+        <label  htmlFor="username">Username</label>
         <input
+          className="signup-input"
           type="text"
           id="username"
           placeholder="Enter Username"
@@ -49,6 +50,7 @@ function SignUp({ setUser, env }) {
         />
         <label htmlFor="password">Password</label>
         <input
+          className="signup-input"
           type="password"
           id="password"
           placeholder="Enter a password"
@@ -56,8 +58,9 @@ function SignUp({ setUser, env }) {
           onChange={(e) => setPassword(e.target.value)}
           autoComplete="current-password"
         />
-        <label htmlFor="password">Password Confirmation</label>
+        <label className="signup-label" htmlFor="password">Password Confirmation</label>
         <input
+          className="signup-input"
           type="password"
           id="password_confirmation"
           placeholder="Re-Enter a password"
@@ -65,8 +68,9 @@ function SignUp({ setUser, env }) {
           onChange={(e) => setPasswordConfirmation(e.target.value)}
           autoComplete="current-password"
         />
-        <label htmlFor="email">Email</label>
+        <label className="signup-label"  htmlFor="email">Email</label>
         <input
+          className="signup-input"
           type="text"
           id="email"
           placeholder="your@emailaddress.com"
@@ -74,8 +78,10 @@ function SignUp({ setUser, env }) {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
-        <label htmlFor="Bio">Bio</label>
+
+        <label className="signup-label"  htmlFor="Bio">Bio</label>
         <input
+          className="signup-input"
           type="text"
           id="bio"
           placeholder="Tell us about yourself"
@@ -83,7 +89,8 @@ function SignUp({ setUser, env }) {
           value={bio}
           onChange={(e) => setBio(e.target.value)}
         />
-        <button className="button"  type="submit">Sign Up</button>
+        <div></div>
+        <button className="button" type="submit">Sign Up</button>
       </form>
     </div>
   );
