@@ -1,41 +1,40 @@
 import React, { useState, useEffect } from "react";
 import RequestCard from "./RequestCard";
 
+function Requests({ user, setUser, env }) {
 
-function Requests({requestData}) {
+    const [requestData, setRequestData] = useState([]);
 
-    // const [requestData, setRequestData] = useState([]);
-    
-    // useEffect(() => {
-    //     fetch("https://obscure-headland-31666.herokuapp.com/requests")
-    //     .then((r) => r.json())
-    //     .then((data) => {
-    //         setRequestData(data);
-    //         console.log(requestData)
-    //     })
-    // }, []);
-    // console.log(requestData)        
-    
-    const renderCard = requestData.map((i) => (
+    useEffect(() => {
+        fetch(`/requests`)
+            .then((r) => r.json())
+            .then((data) => {
+                setRequestData(data);
+                console.log(requestData)
+            });
+
+        // maintain-login
+        // fetch("/me").then((r) => {
+        //     if (r.ok) {
+        //         r.json().then((user) => setUser(user));
+        //     }
+        // });
+    }, []);
+
+    const renderCard = requestData.map((card) => (
         <RequestCard
-            key={i.id}
-            title={i.title}
-            image={i.image}
-            username={i.user.username}
-            description={i.description}
-            start_date={i.start_date}
-            end_date={i.end_date}
+            key={card.id}
+            props={card}
+            env={env}
         />
     ))
-    // const  {title, user_id, description, start_date, end_date} = requestData
-
 
     return (
-        <div>
+        <>
+            <h1>Available Requests</h1>
             {renderCard}
-        </div>
+        </>
     );
 }
-
 
 export default Requests;

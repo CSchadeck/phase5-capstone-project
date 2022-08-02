@@ -3,7 +3,7 @@
   "proxy": "http://obscure-headland-31666.herokuapp.com",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
+  "dependencies": { 
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.1.1",
     "@testing-library/user-event": "^13.5.0",

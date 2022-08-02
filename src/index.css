@@ -19,7 +19,7 @@ margin: 0;
 }
 
 .navbar{
-    background-color:  #333;
+    background-color:  #009f78;
     color: white;
     Display: flex;
     justify-content: space-between;
@@ -46,12 +46,16 @@ nav a {
 }
 
 nav li.active {
-    background-color: #555;
+    background-color: #007f57;
 }
 nav li:hover{
     background-color: #777;
 }
 
+.logout{
+    background-color:  #009f78;
+
+}
 /*Post/Request Form*/
 
 .form_container {

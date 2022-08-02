@@ -1,23 +1,35 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-export default function Login({ setUser }) {
+export default function Login({ setUser, env }) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    let navigate = useNavigate();
+
 
     function handleSubmit(e) {
+        console.log(e);
+        console.table({ username, password });
+
         e.preventDefault();
-        fetch("https://obscure-headland-31666.herokuapp.com/login", {
+        fetch(`/login`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({ username, password }),
         }).then((r) => {
+            console.log('response', r)
             if (r.ok) {
-                r.json().then((user) => setUser(user));
+                r.json().then((user) => {
+                    console.log('user', user);
+                    setUser(user)
+                    navigate('/');
+                    localStorage.setItem('condoPetID', user.id);
+                });
             } else {
                 alert('Invalid Username or Password');
+                
             }
         });
     }
