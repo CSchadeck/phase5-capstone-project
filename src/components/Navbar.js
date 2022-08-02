@@ -1,6 +1,9 @@
 import React from "react";
 import { Link, useResolvedPath, useNavigate } from "react-router-dom";
 
+
+
+
 export default function Navbar({ user, setUser, env }) {
     let navigate = useNavigate();
     function handleLogOut() {

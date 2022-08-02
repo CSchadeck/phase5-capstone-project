@@ -77,7 +77,7 @@ export default function Post({ env }) {
                             value={image}
                             onChange={(e) => setImage(e.target.value)}
                             id="Image"
-                            className="form-input"
+                            className="form-image"
                             type="text"
                             placeholder="Place URL here"
                             name="Image"

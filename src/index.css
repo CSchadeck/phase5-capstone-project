@@ -4,22 +4,27 @@
 
 
 body {
-margin: 0;
+    margin: 0;
+    background-image: url(./images/pawbackground.png);
+    background-size: cover
 }
+
 /*Navbar*/
-.site_title{
+.site_title {
+
     color: white;
     font-size: 2rem;
 
 }
-.container{
+
+.container {
     margin: 1rem;
     text-align: center;
 
 }
 
-.navbar{
-    background-color:  #009f78;
+.navbar {
+    background-color: #009f78;
     color: white;
     Display: flex;
     justify-content: space-between;
@@ -28,7 +33,7 @@ margin: 0;
     padding: 0 1rem;
 }
 
-nav ul { 
+nav ul {
     padding: 0;
     margin: 0;
     list-style: none;
@@ -48,17 +53,19 @@ nav a {
 nav li.active {
     background-color: #007f57;
 }
-nav li:hover{
+
+nav li:hover {
     background-color: #777;
 }
 
-.logout{
-    background-color:  #009f78;
+.logout {
+    background-color: #009f78;
 
 }
+
 /* Post/login/signup Form*/
 
-form{
+form {
     padding: 2rem;
     margin-top: 2rem;
     margin-right: auto;
@@ -68,20 +75,22 @@ form{
     border-radius: 3px;
     box-shadow: 0 15px 35px rgb(50 50 93 / 10%), 0 5px 15px rgba(187, 229, 193, 0.442);
 }
+
 /*Post form */
-.form-block{
+.form-block {
     padding: 0;
     border: 0;
 }
-.form-label{
+
+.form-label {
     display: inline-block;
     margin-bottom: .5rem;
     font-size: .75rem;
     text-transform: uppercase;
     touch-action: manipulation;
-  }
+}
 
-.form-input{
+.form-input {
     display: block;
     padding: 0.5rem 0.75rem;
     width: 100%;
@@ -100,15 +109,15 @@ form{
 }
 
 /*Login form */
-.login-label{
+.login-label {
     display: inline-block;
     margin-bottom: .5rem;
     font-size: .75rem;
     text-transform: uppercase;
     touch-action: manipulation;
-  }
+}
 
-.login-input{
+.login-input {
     display: block;
     padding: 0.5rem 0.75rem;
     width: 100%;
@@ -129,15 +138,15 @@ form{
 
 
 /*Sig up Form*/
-.signup-label{
+.signup-label {
     display: inline-block;
     margin-bottom: .5rem;
     font-size: .75rem;
     text-transform: uppercase;
     touch-action: manipulation;
-  }
+}
 
-.signup-input{
+.signup-input {
     display: block;
     padding: 0.5rem 0.75rem;
     width: 100%;
@@ -160,45 +169,52 @@ form{
 /*Post/Request card*/
 
 .request_card {
+    margin-left: 1059px;
+    height: fit-content;
+    width: 650px;
     position: relative;
     margin-top: 16px;
     margin-bottom: 16px;
-    padding: 16px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-    color: #222;
+    border-radius: 50%;
+    border-radius: 30px;
+    box-shadow: 1px 1px 3px rgba(17, 19, 18, 0.3);
+    color: rgb(12, 85, 71);
     border: 1px solid rgba(255, 255, 255, 0.5);
-    background: #fff;
+    background: rgb(227, 243, 233);
     transition: background-color 1s ease-out;
 }
+
 .request_card--accepted {
     background: palegreen;
 }
 
-.request_card_image {}
+.post-image {
+    height: 300px;
+    width: auto;
+    border-radius: 50%;
+
+}
 
 .button {
     padding: 8px 16px;
     border: 0;
     border-radius: 5px;
-    background-color:#009f78;
+    background-color: #009f78;
     color: #ffffff;
     font-weight: bold;
     cursor: pointer;
 }
-.button:hover{
-    background-color:#95f3db;
+
+.button:hover {
+    background-color: #95f3db;
 }
-
-/*Requests Page*/
-.request {}
-
-.request_card {}
 
 /*Members Page*/
 
 .member_card {
+    margin-left: 1070px;
+    height: fit-content;
+    width: 650px;
     margin-top: 16px;
     margin-bottom: 16px;
     padding: 16px;
@@ -207,7 +223,7 @@ form{
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
     color: #222;
     border: 1px solid rgba(255, 255, 255, 0.5);
-    background-color: #fff;
+    background: rgb(227, 243, 233);
     transition: background-color 1s ease-out;
 }
 
@@ -218,4 +234,3 @@ form{
 .hide {
     display: none;
 }
-
