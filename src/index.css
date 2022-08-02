@@ -81,58 +81,51 @@ nav li:hover{
 /*Post/Request card*/
 
 .request_card {
-    background: rgb(255, 255, 255, 0.8);
-  background: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
-  margin-top: 16px;
-  margin-bottom: 16px;
-  padding: 16px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, .3);
-  color: #222;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  /*background-color: #fff;*/
-  -webkit-transition: background-color 1s ease-out;
-  -moz-transition: background-color 1s ease-out;
-  -o-transition: background-color 1s ease-out;
-  transition: background-color 1s ease-out;
-
-}
-.request_card_image{
-   
-}
-.accept-button{
-    
-}
-
-/*Requests Page*/
-.request{
-    
-}
-.request_card{
-
-}
-
-
-
-
-/*Members Page*/
-
-.member_card{
-    background: rgb(255, 255, 255, 0.8);
-    background: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+    position: relative;
     margin-top: 16px;
     margin-bottom: 16px;
     padding: 16px;
     border: 1px solid #ccc;
     border-radius: 8px;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, .3);
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
     color: #222;
     border: 1px solid rgba(255, 255, 255, 0.5);
-    /*background-color: #fff;*/
-    -webkit-transition: background-color 1s ease-out;
-    -moz-transition: background-color 1s ease-out;
-    -o-transition: background-color 1s ease-out;
+    background: #fff;
     transition: background-color 1s ease-out;
+}
+.request_card--accepted {
+    background: palegreen;
+}
+
+.request_card_image {}
+
+.accept-button {}
+
+/*Requests Page*/
+.request {}
+
+.request_card {}
+
+/*Members Page*/
+
+.member_card {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    padding: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    color: #222;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    background-color: #fff;
+    transition: background-color 1s ease-out;
+}
+
+/* Profile */
+
+
+/* utilities */
+.hide {
+    display: none;
 }
 

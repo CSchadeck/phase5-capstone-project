@@ -12,20 +12,19 @@ function Requests({ user, setUser, env }) {
                 setRequestData(data);
                 console.log(requestData)
             });
-
-        // maintain-login
-        // fetch("/me").then((r) => {
-        //     if (r.ok) {
-        //         r.json().then((user) => setUser(user));
-        //     }
-        // });
     }, []);
+
+    function handleUpdatedRequest(updatedRequest) {
+        const updatedRequests = requestData.map((request) => request.id === updatedRequest.id ? updatedRequest : request);
+        setRequestData(updatedRequests);
+    }
 
     const renderCard = requestData.map((card) => (
         <RequestCard
             key={card.id}
             props={card}
             env={env}
+            handleUpdatedRequest={handleUpdatedRequest}
         />
     ))
 

@@ -39,100 +39,104 @@ export default function Post({ env }) {
     const [description, setDescription] = useState("")
 
     return (
-        <div className="form_container">
-            <form className="form_field" >
+        <>
+            <h1>Post Request</h1>
 
-                <div className='form-block'>
-                    <label htmlFor="title">Purpose:</label>
-                    <input
-                        value={title}
-                        onChange={(e) => setTitle(e.target.value)}
-                        id="title"
-                        className="form_field"
-                        type="text"
-                        placeholder="Cat care, Dog care,..."
-                        name="title"
-                    />
-                </div>
+            <div className="form_container">
+                <form className="form_field" >
 
-                <div className='form-block'>
-                    <label htmlFor="user_id">Member Name</label>
-                    <input
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
-                        id="user_id"
-                        className="form_field"
-                        type="text"
-                        placeholder="username"
-                        name="user_id"
-                    />
-                </div>
+                    <div className='form-block'>
+                        <label htmlFor="title">Purpose:</label>
+                        <input
+                            value={title}
+                            onChange={(e) => setTitle(e.target.value)}
+                            id="title"
+                            className="form_field"
+                            type="text"
+                            placeholder="Cat care, Dog care,..."
+                            name="title"
+                        />
+                    </div>
 
-                <div className='form-block'>
-                    <label htmlFor="">Pet Image</label>
-                    <input
-                        value={image}
-                        onChange={(e) => setImage(e.target.value)}
-                        id="Image"
-                        className="form_field"
-                        type="text"
-                        placeholder="Place URL here"
-                        name="Image"
-                    />
-                </div>
+                    <div className='form-block'>
+                        <label htmlFor="user_id">Member Name</label>
+                        <input
+                            value={username}
+                            onChange={(e) => setUsername(e.target.value)}
+                            id="user_id"
+                            className="form_field"
+                            type="text"
+                            placeholder="username"
+                            name="user_id"
+                        />
+                    </div>
 
-                <div className='form-block'>
-                    <label>Start date</label>
-                    <DatePicker
-                        value={startDate}
-                        placeholderText="Select Start Date"
-                        showTimeSelect
-                        dateFormat="MMMM d, yyyy h:mmaa"
-                        selected={startDate}
-                        selectsStart
-                        startDate={startDate}
-                        endDate={endDate}
-                        minDate={new Date()}
-                        onChange={date => setStartDate(date)}
-                    />
-                </div>
+                    <div className='form-block'>
+                        <label htmlFor="">Pet Image</label>
+                        <input
+                            value={image}
+                            onChange={(e) => setImage(e.target.value)}
+                            id="Image"
+                            className="form_field"
+                            type="text"
+                            placeholder="Place URL here"
+                            name="Image"
+                        />
+                    </div>
 
-                <div className='form-block'>
-                    <label>End date</label>
-                    <DatePicker
-                        value={endDate}
-                        placeholderText="Select End Date"
-                        showTimeSelect
-                        dateFormat="MMMM d, yyyy h:mmaa"
-                        selected={endDate}
-                        selectsEnd
-                        startDate={startDate}
-                        endDate={endDate}
-                        minDate={startDate}
-                        onChange={date => setEndDate(date)}
-                    />
-                </div>
+                    <div className='form-block'>
+                        <label>Start date</label>
+                        <DatePicker
+                            value={startDate}
+                            placeholderText="Select Start Date"
+                            showTimeSelect
+                            dateFormat="MMMM d, yyyy h:mmaa"
+                            selected={startDate}
+                            selectsStart
+                            startDate={startDate}
+                            endDate={endDate}
+                            minDate={new Date()}
+                            onChange={date => setStartDate(date)}
+                        />
+                    </div>
 
-                <div className='form-block'>
-                    <label htmlFor="">Special instructions:</label>
-                    <input
-                        value={description}
-                        onChange={(e) => setDescription(e.target.value)}
-                        id="description"
-                        className="form_field"
-                        type="text"
-                        placeholder="any specific instructions to share?"
-                        name="description"
-                    />
-                </div>
+                    <div className='form-block'>
+                        <label>End date</label>
+                        <DatePicker
+                            value={endDate}
+                            placeholderText="Select End Date"
+                            showTimeSelect
+                            dateFormat="MMMM d, yyyy h:mmaa"
+                            selected={endDate}
+                            selectsEnd
+                            startDate={startDate}
+                            endDate={endDate}
+                            minDate={startDate}
+                            onChange={date => setEndDate(date)}
+                        />
+                    </div>
 
-                <div className='form-block'>
-                    <button type="submit" onClick={submitRequest}>
-                        Submit Request
-                    </button>
-                </div>
-            </form>
-        </div>
+                    <div className='form-block'>
+                        <label htmlFor="">Special instructions:</label>
+                        <input
+                            value={description}
+                            onChange={(e) => setDescription(e.target.value)}
+                            id="description"
+                            className="form_field"
+                            type="text"
+                            placeholder="any specific instructions to share?"
+                            name="description"
+                        />
+                    </div>
+
+                    <div className='form-block'>
+                        <button type="submit" onClick={submitRequest}>
+                            Submit Request
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </>
     );
 }
 

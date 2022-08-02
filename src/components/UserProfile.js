@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory, Link } from 'react-router-dom';
 import UserProfileUpdate from './UserProfileUpdate';
+import UserCard from './UserCard';
 
 
 function UserProfile({ user, setUser, env }) {
@@ -9,29 +10,19 @@ function UserProfile({ user, setUser, env }) {
     const [newUsername, setUsername] = useState("")
     const [newEmail, setEmail] = useState("")
     const [newBio, setBio] = useState("")
+    const [cards, setCards] = useState([]);
 
-    // useEffect(() => {
-    //     // auto-login
-    //     fetch("/me").then((r) => {
-    //         if (r.ok) {
-    //             r.json().then((user) => setUser(user));
-    //         }
-    //     });
-    // }, []);
+    useEffect(() => {
+        setCards(user.requests);
+    }, []);
 
-    // console.log(newUsername)
-    // console.log(newEmail)
-    // console.log(newBio)
+    console.log('cards', cards);
 
     function handleUpdateUser(e) {
         e.preventDefault();
         fetch(`/${user.id}`, {
             method: "PATCH",
-            headers: {
-                "Content-Type": "application/json",
-                'Access-Control-Allow-Origin': '*',
-                'Access-Control-Allow-Methods': 'POST,PATCH,OPTIONS'
-            },
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
                 username: newUsername,
                 email: newEmail,
@@ -45,15 +36,23 @@ function UserProfile({ user, setUser, env }) {
             });
     };
 
+    function handleUserCard(e) {
+        e.preventDefault()
+        // patch request
+    }
+
     return (
-        <div>
-            <div key={user.id} className="user_card">
-                <h3 className="user_card_username">Username: {user.username}</h3>
-                <p className="user_card_email">Email: {user.email}</p>
-                <p className="user_card_bio">Bio: {user.bio}</p>
-                {/* <UserProfileUpdate handleUpdateUser={handleUpdateUser}/> */}
-            </div>
+        <>
+            <h1>Profile Page</h1>
+
             <div>
+                <div key={user.id} className="user_card">
+                    <h2 className="user_card_username">{user.username}</h2>
+                    <p className="user_card_email">Email: {user.email}</p>
+                    <p className="user_card_bio">Bio: {user.bio}</p>
+                    {/* <UserProfileUpdate handleUpdateUser={handleUpdateUser}/> */}
+                </div>
+                {/* <div>
                 <form onSubmit={(e) => handleUpdateUser(e)}>
                     <div className='form-block'>
                         <label htmlFor="newUsername">Username</label>
@@ -96,9 +95,20 @@ function UserProfile({ user, setUser, env }) {
                         <button type='submit'>Submit</button>
                     </div>
                 </form>
-            </div>
+            </div> */}
 
-        </div>
+                <div className='user-cards'>
+                    <h2>User Requests</h2>
+                    <div className='user-cards__status'>
+                        <div className='user-cards--accepted'>Accepted: {cards.filter((card) => card.accepted).length}</div>
+                        <div className='user-cards--open'>Open: {cards.filter((card) => !card.accepted).length}</div>
+                    </div>
+                    {cards.length === 0 ? <div>No requests at this time.</div> : cards.map((card) =>
+                        <UserCard key={card.id} props={card} user={user} />
+                    )}
+                </div>
+            </div>
+        </>
     )
 
 

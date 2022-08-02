@@ -1,6 +1,6 @@
 {
   "name": "react-navbar",
-  "proxy": "http://obscure-headland-31666.herokuapp.com",
+  "proxy": "https://obscure-headland-31666.herokuapp.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": { 

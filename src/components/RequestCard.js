@@ -1,12 +1,30 @@
 import React, { useState } from 'react';
 
-function RequestCard({ props, env }) {
+function RequestCard({ props, env, handleUpdatedRequest }) {
     // const { id, title, user_id, image, description, start_date, end_date, accepted } = props;
 
+    function acceptHandler(e) {
+        fetch(`/requests/${props.id}`, {
+            method: "PATCH",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                accepted: true,
+                accepted_by: localStorage.getItem('condoPetID')
+            })
+        })
+            .then(res => res.json())
+            .then((data) => {
+                console.log(data);
+                handleUpdatedRequest(data)
+                alert('Thank you for volunteering.')
+            });
+    }
+
     console.log('card props', props);
+    const visible = props.accepted ? 'hide' : '';
 
     return (
-        <div className="request_card">
+        <div className={`request_card ${visible}`}>
             <h3 className="request_card_name">{props.title}</h3>
             <div className="request_card_image">
                 <img src={props.image}></img>
@@ -15,30 +33,11 @@ function RequestCard({ props, env }) {
             <div className="request_card_description">{props.description}</div>
             <div className="request_card_start_date">{new Date(props.start_date).toLocaleString()}</div>
             <div className="request_card_end_date">{new Date(props.end_date).toLocaleString()}</div>
-            <button className="accept_button" onClick={thankYou}>Can you help?🐾</button>
+            <button className="accept_button" onClick={acceptHandler}>Can you help?🐾</button>
         </div>
 
     );
 }
-
-function thankYou() {
-
-    alert('Thank you for volunteering.')
-}
-
-// function acceptHandler(e) {
-//     fetch(`${env}/requests/${props.id}`, {
-//         method: "PATCH",
-//         headers: { "Content-Type": "application/json" },
-//         body: JSON.stringify({
-//             ikes: feeling.likes + 1
-//         })
-//     }).then(r => r.json())
-//         .then((data) => {
-//             console.log(data);
-//             handleUpdateFeeling(data)
-//         })
-// }
 
 export default RequestCard;
 // <img src={image} className="request_card">Default pet</img> image issue ref

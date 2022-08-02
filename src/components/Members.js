@@ -17,7 +17,7 @@ export default function Members({ env }) {
 
         <div key={member.id} className="member_card">
             <h3 className="member_card_username">Username: {member.username}</h3>
-            <div className="member_card_email">Email: {member.email}</div>
+            {/* <div className="member_card_email">Email: {member.email}</div> */}
             <div className="member_card_bio">Bio: {member.bio}</div>
         </div>
 
@@ -26,6 +26,8 @@ export default function Members({ env }) {
 
     return (
         <div>
+            <h1>Members</h1>
+
             {membersArr}
         </div>
     )
