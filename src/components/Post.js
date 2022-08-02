@@ -42,16 +42,16 @@ export default function Post({ env }) {
         <>
             <h1>Post Request</h1>
 
-            <div className="form_container">
-                <form className="form_field" >
+            <div >
+                <form  >
 
                     <div className='form-block'>
-                        <label htmlFor="title">Purpose:</label>
+                        <label className="form-label" htmlFor="title">Purpose:</label>
                         <input
                             value={title}
                             onChange={(e) => setTitle(e.target.value)}
                             id="title"
-                            className="form_field"
+                            className="form-input"
                             type="text"
                             placeholder="Cat care, Dog care,..."
                             name="title"
@@ -59,12 +59,12 @@ export default function Post({ env }) {
                     </div>
 
                     <div className='form-block'>
-                        <label htmlFor="user_id">Member Name</label>
+                        <label className="form-label"  htmlFor="user_id">Member Name</label>
                         <input
                             value={username}
                             onChange={(e) => setUsername(e.target.value)}
                             id="user_id"
-                            className="form_field"
+                            className="form-input"
                             type="text"
                             placeholder="username"
                             name="user_id"
@@ -72,12 +72,12 @@ export default function Post({ env }) {
                     </div>
 
                     <div className='form-block'>
-                        <label htmlFor="">Pet Image</label>
+                        <label className="form-label"  htmlFor="">Pet Image</label>
                         <input
                             value={image}
                             onChange={(e) => setImage(e.target.value)}
                             id="Image"
-                            className="form_field"
+                            className="form-input"
                             type="text"
                             placeholder="Place URL here"
                             name="Image"
@@ -85,7 +85,7 @@ export default function Post({ env }) {
                     </div>
 
                     <div className='form-block'>
-                        <label>Start date</label>
+                        <label className="form-label" >Start date</label>
                         <DatePicker
                             value={startDate}
                             placeholderText="Select Start Date"
@@ -101,7 +101,7 @@ export default function Post({ env }) {
                     </div>
 
                     <div className='form-block'>
-                        <label>End date</label>
+                        <label className="form-label" >End date</label>
                         <DatePicker
                             value={endDate}
                             placeholderText="Select End Date"
@@ -117,12 +117,12 @@ export default function Post({ env }) {
                     </div>
 
                     <div className='form-block'>
-                        <label htmlFor="">Special instructions:</label>
+                        <label className="form-label"  htmlFor="">Special instructions:</label>
                         <input
                             value={description}
                             onChange={(e) => setDescription(e.target.value)}
                             id="description"
-                            className="form_field"
+                            className="form-input"
                             type="text"
                             placeholder="any specific instructions to share?"
                             name="description"
@@ -130,7 +130,7 @@ export default function Post({ env }) {
                     </div>
 
                     <div className='form-block'>
-                        <button type="submit" onClick={submitRequest}>
+                        <button className="button" type="submit" onClick={submitRequest}>
                             Submit Request
                         </button>
                     </div>

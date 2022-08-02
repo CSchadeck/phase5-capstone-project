@@ -83,7 +83,7 @@ function SignUp({ setUser, env }) {
           value={bio}
           onChange={(e) => setBio(e.target.value)}
         />
-        <button type="submit">Sign Up</button>
+        <button className="button"  type="submit">Sign Up</button>
       </form>
     </div>
   );

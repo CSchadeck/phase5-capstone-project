@@ -58,15 +58,49 @@ nav li:hover{
 }
 /*Post/Request Form*/
 
-.form_container {
-
+form{
+    padding: 2rem;
+    margin-top: 2rem;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 23.75rem;
+    background-color: #fff;
+    border-radius: 3px;
+    box-shadow: 0 15px 35px rgb(50 50 93 / 10%), 0 5px 15px rgba(187, 229, 193, 0.442);
 }
 
-.form_fields{
+.form-block{
+    padding: 0;
+    border: 0;
+}
+.form-label{
+    display: inline-block;
+    margin-bottom: .5rem;
+    font-size: .75rem;
+    text-transform: uppercase;
+    touch-action: manipulation;
+  }
 
+.form-input{
+    display: block;
+    padding: 0.5rem 0.75rem;
+    width: 100%;
+    font-size: 1rem;
+    line-height: 1.25;
+    color: #55595c;
+    background-color: #fff;
+    background-image: none;
+    background-clip: padding-box;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid #eee;
+    border-left: 0;
+    border-radius: 3px;
+    transition: all 0.25s cubic-bezier(0.4, 0, 1, 1);
 }
 
-/*Post/Request Form*/
+
+/*Sig up Form*/
 .sign-up {
 
 }
@@ -99,7 +133,18 @@ nav li:hover{
 
 .request_card_image {}
 
-.accept-button {}
+.button {
+    padding: 8px 16px;
+    border: 0;
+    border-radius: 5px;
+    background-color:#009f78;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+}
+.button:hover{
+    background-color:#95f3db;
+}
 
 /*Requests Page*/
 .request {}
