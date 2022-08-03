@@ -2,9 +2,16 @@ function Home({ user, env }) {
   console.table('user:', user);
   if (user) {
     return <div> <h1>Welcome, {user.username}!</h1>
-      <h3> If you would like to help out your neighbors who need the occasional pet sitter, check out the Request page. There you will see posts from pet owners who need help with care for their pets while they are away from home. Do you have a pet? Perhaps someone can return the favor! Head over to the Post page and submit your request for your pet care needs. </h3></div>;
+      <div className="home">
+      <p className="home-text"> Welcome to a community of loving pet owners. Condo pet offers a safe, private place for you and your neighers to support each other for pet-sitting needs. </p>
+      </div>
+      <footer><img className="pup-gif" src="https://mission.vet/wp-content/uploads/2016/11/mvs-3.gif" alt= "cute pets"/></footer>
+      <div><ul>
+        <li>Post a Pet sitting, or pet care need on the POST page</li>
+        <li>Keep track of your request status in the MY PROFILE page</li>
+        <li>Can you return the favor? Check out the REQUESTS page to see who among your neighbors is in need of pet care.</li></ul></div></div>;
   } else {
-    return <div><h1>Hi There!</h1> <h3>Welcome to CondoPet. A private community board for your residential building or neighborhood. CondoPet is where pet owners and animal lovers alike, can reach out directly to one another for pet sitting needs. </h3> </div>;
+    return <div><h1>Hi There!</h1> <dive className="home"><h3 >Welcome to CondoPet. A private community board for your residential building or neighborhood. CondoPet is where pet owners and animal lovers alike, can reach out directly to one another for pet sitting needs. </h3></dive> </div>;
   }
 }
 
