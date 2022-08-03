@@ -27,8 +27,7 @@ function RequestCard({ props, env, handleUpdatedRequest }) {
         <div className={`request_card ${visible}`}>
             <h3 >{props.title}</h3>
             <div>
-                <div > <img className='post-image' src={props.image}></img></div>
-         
+                <img className='post-image' src={props.image}></img>
             </div>
             <div >{props.user.username}</div>
             <div >{props.description}</div>

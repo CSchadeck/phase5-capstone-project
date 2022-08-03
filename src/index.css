@@ -5,15 +5,17 @@
 
 body {
     margin: 0;
+    font-family: 'Roboto', sans-serif;
 }
 
 #root {
     min-height: 100vh;
     position: relative;
 }
+
 #root:before {
     content: '';
-    position:fixed;
+    position: fixed;
     width: 100%;
     min-height: 100vh;
     max-height: 100%;
@@ -24,38 +26,37 @@ body {
 }
 
 /* Home Screen*/
-.home{
+.home-top {
     width: 90%;
     padding: 1em;
     margin-right: auto;
     margin-left: auto;
-    font-size:xx-large;
+    font-size: xx-large;
     text-shadow: #009f78;
 }
-.home-text{
-   
+
+.home-bottom {
+    width: 90%;
+    padding: 1em;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: xx-large;
+    text-shadow: #009f78;
 }
 
-.pup-gif{
-
-}
+.pup-gif {}
 
 /*Navbar*/
 .site_title {
-
     color: white;
     font-size: 2rem;
-
 }
-
 .container {
-
     margin: 1rem;
-    text-align: center;
-
 }
 
 .navbar {
+    position:sticky;
     background-color: #009f78;
     color: white;
     Display: flex;
@@ -110,15 +111,15 @@ form {
 
 /*Post form */
 .form-block {
-    padding: 0;
+    padding: 8px;
     border: 0;
-    
+
 }
 
 .form-label {
-    display: inline-block;
+    display: block;
     margin-bottom: .5rem;
-    font-size: .75rem;
+    margin-top: .5rem;
     text-transform: uppercase;
     touch-action: manipulation;
 }
@@ -164,20 +165,26 @@ form {
     border-right: 0;
     border-bottom: 1px solid #eee;
     border-left: 0;
-    border-radius: 3px;
+    border-radius: 5px;
     transition: all 0.25s cubic-bezier(0.4, 0, 1, 1);
 }
 
 
 
 /*Sig up Form*/
+.signup-block {
+    padding: 8px;
+    border: 0;
+
+}
+
 .signup-label {
     display: inline-block;
     margin-bottom: .5rem;
     font-size: .75rem;
     text-transform: uppercase;
     touch-action: manipulation;
-    
+
 }
 
 .signup-input {
@@ -192,11 +199,12 @@ form {
     background-clip: padding-box;
     border-top: 0;
     border-right: 0;
-    border-bottom: 1px solid #eee;
+    border-bottom: 2px solid #eee;
     border-left: 0;
-    border-radius: 3px;
+    border-radius: 5px;
     transition: all 0.25s cubic-bezier(0.4, 0, 1, 1);
 }
+
 
 /*Post/Request page*/
 
@@ -204,13 +212,11 @@ form {
 
 .request_card {
     height: fit-content;
-    width: 650px;
-    margin:auto;
-    margin-top: 16px;
-    margin-bottom: 16px;
-    border-radius: 50%;
-    border-radius: 30px;
+    max-width: 650px;
+    margin: 16px auto;
+    border-radius: 16px;
     box-shadow: 1px 1px 3px rgba(17, 19, 18, 0.3);
+    padding: 1rem;
     color: rgb(12, 85, 71);
     border: 1px solid rgba(255, 255, 255, 0.5);
     background: rgb(227, 243, 233);
@@ -245,7 +251,7 @@ form {
 /*Members Page*/
 
 .member_card {
-    
+
     height: fit-content;
     width: 650px;
     margin: auto;
@@ -257,7 +263,7 @@ form {
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
     color: #222;
     border: 1px solid rgba(255, 255, 255, 0.5);
-   background: rgb(227, 243, 233);
+    background: rgb(227, 243, 233);
     transition: background-color 1s ease-out;
 }
 
@@ -268,3 +274,12 @@ form {
 .hide {
     display: none;
 }
+.text-center {
+    text-align: center;
+}
+.block-center {
+    display: block;
+    margin: auto
+}
+
+/* footer */

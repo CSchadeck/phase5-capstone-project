@@ -26,6 +26,7 @@ export default function Post({ env }) {
             .then((postRequest) => {
                 console.log(postRequest)
                 setPostRequest(postRequest)
+               
             })
     }
 
@@ -40,7 +41,7 @@ export default function Post({ env }) {
 
     return (
         <>
-            <h1>Post Request</h1>
+            <h1 className="text-center">Post Request</h1>
 
             <div >
                 <form  >
@@ -77,7 +78,7 @@ export default function Post({ env }) {
                             value={image}
                             onChange={(e) => setImage(e.target.value)}
                             id="Image"
-                            className="form-image"
+                            className="form-input"
                             type="text"
                             placeholder="Place URL here"
                             name="Image"
@@ -87,6 +88,7 @@ export default function Post({ env }) {
                     <div className='form-block'>
                         <label className="form-label" >Start date</label>
                         <DatePicker
+                        className="form-input"
                             value={startDate}
                             placeholderText="Select Start Date"
                             showTimeSelect
@@ -103,6 +105,7 @@ export default function Post({ env }) {
                     <div className='form-block'>
                         <label className="form-label" >End date</label>
                         <DatePicker
+                        className="form-input"
                             value={endDate}
                             placeholderText="Select End Date"
                             showTimeSelect

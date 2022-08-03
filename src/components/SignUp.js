@@ -38,7 +38,7 @@ function SignUp({ setUser, env }) {
     <div>
       <form onSubmit={handleSubmit}>
         <h1>Sign Up</h1>
-        <label  htmlFor="username">Username</label>
+        <label className="signup-label"  htmlFor="username">Username</label>
         <input
           className="signup-input"
           type="text"
@@ -48,7 +48,7 @@ function SignUp({ setUser, env }) {
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
-        <label htmlFor="password">Password</label>
+        <label className="signup-label"  htmlFor="password">Password</label>
         <input
           className="signup-input"
           type="password"

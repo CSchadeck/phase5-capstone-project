@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function UserCard({ props, user }) {
+function UserCard({ props, user, members }) {
     // const { id, title, user_id, image, description, start_date, end_date, accepted } = props;
 
     function deleteHandler(e) {
@@ -20,8 +20,8 @@ function UserCard({ props, user }) {
         // });
     }
 
-    console.log('card props', props);
     const accepted = props.accepted ? 'request_card--accepted' : '';
+    const acceptedName = accepted ? members.filter(m => m.id == props.accepted_by)[0].username : 'nope';
 
     return (
         <div className={`request_card ${accepted}`}>
@@ -33,7 +33,7 @@ function UserCard({ props, user }) {
             <div className="request_card_description">{props.description}</div>
             <div className="request_card_start_date">{new Date(props.start_date).toLocaleString()}</div>
             <div className="request_card_end_date">{new Date(props.end_date).toLocaleString()}</div>
-            {/* <button className="accept_button" onClick={acceptHandler}>Can you help?🐾</button> */}
+            {accepted ? <div className='request_card--taken'>Request accepted by: {acceptedName}</div> : <div className='request_card--open'>Request still open</div>}
         </div>
 
     );
