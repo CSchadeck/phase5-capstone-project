@@ -16,9 +16,9 @@ export default function Members({ env }) {
     const membersArr = members.map((member) => (
 
         <div key={member.id} className="member_card">
-            <h3 className="member_card_username">Username: {member.username}</h3>
+            <h3 className="member_card_username">{member.username}</h3>
             {/* <div className="member_card_email">Email: {member.email}</div> */}
-            <div className="member_card_bio">Bio: {member.bio}</div>
+            <div className="member_card_bio"><strong>Bio:</strong> {member.bio}</div>
         </div>
 
     ))

@@ -2,7 +2,6 @@
     box-sizing: border-box;
 }
 
-
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
@@ -98,14 +97,14 @@ nav li:hover {
 
 /* Post/login/signup Form*/
 
-form {
-    padding: 2rem;
+#post-form {
+    padding: 1rem;
     margin-top: 2rem;
     margin-right: auto;
     margin-left: auto;
     max-width: 23.75rem;
     background-color: #fff;
-    border-radius: 3px;
+    border-radius: 16px;
     box-shadow: 0 15px 35px rgb(50 50 93 / 10%), 0 5px 15px rgba(187, 229, 193, 0.442);
 }
 
@@ -140,6 +139,10 @@ form {
     border-left: 0;
     border-radius: 5px;
     transition: all 0.25s cubic-bezier(0.4, 0, 1, 1);
+}
+
+.form-button {
+    width: 100%;
 }
 
 .post-sent #post-form {
@@ -188,11 +191,10 @@ form {
 
 
 
-/*Sig up Form*/
+/*Sign up Form*/
 .signup-block {
     padding: 8px;
     border: 0;
-
 }
 
 .signup-label {
@@ -221,10 +223,113 @@ form {
     transition: all 0.25s cubic-bezier(0.4, 0, 1, 1);
 }
 
+/* User Card */
+.user_card {
+    max-width: 650px;
+    margin: auto;
+    margin-top: 16px;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    color: #222;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    background: rgb(227, 243, 233);
+    transition: background-color 1s ease-out;
+}
 
-/*Post/Request page*/
+.user-cards {
+    max-width: 650px;
+    margin: auto;
+}
 
-/*Post/Request card*/
+.user-cards__status {
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem;
+    background: #fff;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 16px;
+}
+
+.dot {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+}
+
+.dot--open {
+    background-color: #e3f3e9
+}
+
+.dot--taken {
+    background-color: #98fb98;
+}
+
+.user-request_card {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 8px 0px; 
+    grid-template-areas: 
+        "user-request_card--title user-request_card--title"
+        "user-request_card--image user-request_card--image"
+        "user-request_card--owner user-request_card--owner"
+        "user-request_card--description user-request_card--description"
+        "user-request_card--start user-request_card--end"
+        "user-request_card--status user-request_card--status"; 
+    flex-direction: column;
+    max-width: 650px;
+    padding: 1rem;
+    margin: 16px auto;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 1px 1px 3px rgba(17, 19, 18, 0.3);
+    color: rgb(12, 85, 71);
+    background: rgb(227, 243, 233);
+    transition: background-color 1s ease-out;
+}
+
+.user-request_card--title { 
+    grid-area: user-request_card--title;
+    font-weight: 700;
+ }
+.user-request_card--image { 
+    grid-area: user-request_card--image; 
+}
+.user-request_card--owner { 
+    grid-area: user-request_card--owner; 
+    font-weight: 700;
+}
+.user-request_card--description { 
+    grid-area: user-request_card--description; 
+}
+.user-request_card--start { 
+    grid-area: user-request_card--start; 
+    background: #fff;
+    padding: .5rem 1rem;
+    border-radius: 5px 0 0 5px;
+    text-align: center;
+}
+.user-request_card--end { 
+    grid-area: user-request_card--end; 
+    background: #fff;
+    padding: .5rem 1rem;
+    border-radius: 0 5px 5px 0;
+    text-align: center;
+}
+.user-request_card--status { 
+    grid-area: user-request_card--status;
+    background: #fff;
+    padding: .5rem 1rem;
+    border-radius: 5px;
+    text-align: center;
+}
+.user-request_card--accepted {
+    background: palegreen;
+}
+
+/* Request Card */
 
 .request_card {
     display: grid;
@@ -260,25 +365,43 @@ form {
     grid-area: request_card--owner; 
     font-weight: 700;
 }
-.request_card--description { grid-area: request_card--description; }
+.request_card--description { 
+    grid-area: request_card--description; 
+}
 .request_card--start { 
     grid-area: request_card--start; 
     background: #fff;
     padding: .5rem 1rem;
     border-radius: 5px 0 0 5px;
+    text-align: center;
 }
 .request_card--end { 
     grid-area: request_card--end; 
     background: #fff;
     padding: .5rem 1rem;
     border-radius: 0 5px 5px 0;
+    text-align: center;
 }
 .request_card--button { 
     grid-area: request_card--button; 
 }
 
+.request_card--accepted {
+    background: palegreen;
+}
+
+.request_card_name, .request_card h3 {
+    margin-top: 0;
+}
+
+.member_card_username, 
+.user_card_username, 
+.request_card h3 {
+    margin-top: 0;
+}
+
 .post-image {
-    border-radius: 50%;
+    border-radius: 8px;
     aspect-ratio: 16 / 9;
     width: 100%;
     object-fit: cover;
@@ -301,14 +424,10 @@ form {
 /*Members Page*/
 
 .member_card {
-
-    height: fit-content;
-    width: 650px;
+    max-width: 650px;
     margin: auto;
     margin-top: 16px;
-    margin-bottom: 16px;
     padding: 16px;
-    border: 1px solid #ccc;
     border-radius: 8px;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
     color: #222;
@@ -316,27 +435,6 @@ form {
     background: rgb(227, 243, 233);
     transition: background-color 1s ease-out;
 }
-
-.request_card_name, .request_card h3 {
-    margin-top: 0;
-}
-
-.member_card_username, .request_card h3 {
-    margin-top: 0;
-}
-
-/* Profile */
- .user-card{
-    height: fit-content;
-    width: 650px;
-    margin: auto;
-    margin-top: 16px;
-    margin-bottom: 16px;
-    padding: 16px;
- }
- .user-cards_status{
-}
- 
 
 /* utilities */s
 .hide {
@@ -348,7 +446,5 @@ form {
 .block-center {
     display: block;
     margin: auto
-}
-.pup-gif {
 
 }

@@ -20,24 +20,25 @@ function UserCard({ props, user, members }) {
         // });
     }
 
-    const accepted = props.accepted ? 'request_card--accepted' : '';
+    console.log('inside card', props)
+
+    const accepted = props.accepted ? 'user-request_card--accepted' : '';
     const acceptedName = accepted ? members.filter(m => m.id == props.accepted_by)[0].username : 'nope';
 
     return (
-        <div className={`request_card ${accepted}`}>
-            <h3 className="request_card_name">{props.title}</h3>
-            <div className="request_card_image">
-                <img src={props.image}></img>
+        <div className={`user-request_card ${accepted}`}>
+            <h3 className="user-request_card--title">{props.title}</h3>
+            <div className="user-request_card--image">
+                <img className='post-image' src={props.image}></img>
             </div>
-            <div className="request_card_username">{user.username}</div>
-            <div className="request_card_description">{props.description}</div>
-            <div className="request_card_start_date">{new Date(props.start_date).toLocaleString()}</div>
-            <div className="request_card_end_date">{new Date(props.end_date).toLocaleString()}</div>
-            {accepted ? <div className='request_card--taken'>Request accepted by: {acceptedName}</div> : <div className='request_card--open'>Request still open</div>}
+            <div className="user-request_card--owner">{user.username}</div>
+            <div className="user-request_card--description">{props.description}</div>
+            <div className="user-request_card--start">{new Date(props.start_date).toLocaleString()}</div>
+            <div className="user-request_card--end">{new Date(props.end_date).toLocaleString()}</div>
+            {accepted ? <div className='user-request_card--status'>Request accepted by: {acceptedName}</div> : <div className='user-request_card--status'>Request still open</div>}
         </div>
 
     );
 }
 
 export default UserCard;
-// <img src={image} className="request_card">Default pet</img> image issue ref

@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import 'react-datepicker/dist/react-datepicker.css';
 
-export default function Post({ env }) {
-
+export default function Post({ env, user }) {
+    console.log('user:', user)
     const [postRequest, setPostRequest] = useState([]);
 
     //post method
@@ -38,6 +38,10 @@ export default function Post({ env }) {
     const [image, setImage] = useState("")
     const [description, setDescription] = useState("")
     const [sent, setSent] = useState(false);
+
+    useEffect(() => {
+        setUsername(user.username);
+    }, []);
 
     const postSent = sent ? 'post-sent' : '';
 
@@ -136,7 +140,7 @@ export default function Post({ env }) {
                     </div>
 
                     <div className='form-block'>
-                        <button className="button" type="submit" onClick={submitRequest}>
+                        <button className="button form-button" type="submit" onClick={submitRequest}>
                             Submit Request
                         </button>
                     </div>
