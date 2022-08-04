@@ -11,7 +11,7 @@ function Requests({ user, setUser, env }) {
             .then((r) => r.json())
             .then((data) => {
                 setRequestData(data);
-                console.log(requestData)
+                //console.log(requestData)
             });
     }, []);
 
@@ -20,7 +20,7 @@ function Requests({ user, setUser, env }) {
         setRequestData(updatedRequests);
     }
 
-    const renderCard = requestData.map((card) => (
+    const renderCard = requestData.filter(check => check.user).map((card) => (
         <RequestCard
             key={card.id}
             props={card}
@@ -31,7 +31,7 @@ function Requests({ user, setUser, env }) {
 
     return (
         <>
-            <h1>Available Requests</h1>
+            <h1 className="text-center">Available Requests</h1>
             {renderCard}
         </>
     );

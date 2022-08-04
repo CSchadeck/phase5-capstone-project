@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function SignUp({ setUser, env }) {
   const [username, setUsername] = useState("");
@@ -6,6 +7,7 @@ function SignUp({ setUser, env }) {
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
   const [email, setEmail] = useState("");
   const [bio, setBio] = useState("")
+  let navigate = useNavigate();
 
   function handleSubmit(e) {
     console.log(e);
@@ -30,7 +32,7 @@ function SignUp({ setUser, env }) {
     }).then((r) => {
       if (r.ok) {
         r.json().then((user) => setUser(user));
-      }
+        navigate('/')}
     });
   }
 
@@ -90,7 +92,7 @@ function SignUp({ setUser, env }) {
           onChange={(e) => setBio(e.target.value)}
         />
         <div></div>
-        <button className="button" type="submit">Sign Up</button>
+        <button className="signup-label button" type="submit">Sign Up</button>
       </form>
     </div>
   );

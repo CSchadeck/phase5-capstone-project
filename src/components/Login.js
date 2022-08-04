@@ -59,8 +59,8 @@ export default function Login({ setUser, env }) {
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="enter password"
                 />
-                <button className="button"  type="submit">Login</button>
-                <div></div>
+                <button className="login-label button"  type="submit">Login</button>
+                <div><></></div>
                 <Link to="/SignUp">Not a member? Click here to sign up!</Link>
             </form>
         </div>

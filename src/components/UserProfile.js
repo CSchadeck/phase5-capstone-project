@@ -19,10 +19,10 @@ function UserProfile({ user, setUser, env }) {
 
     return (
         <>
-            <h1>Profile Page</h1>
+            <h1 className="text-center">Profile Page</h1>
 
             <div>
-                <div key={user.id} className="user_card">
+                <div key={user.id} className="user-card">
                     <h2 className="user_card_username">{user.username}</h2>
                     <p className="user_card_email">Email: {user.email}</p>
                     <p className="user_card_bio">Bio: {user.bio}</p>
@@ -30,9 +30,9 @@ function UserProfile({ user, setUser, env }) {
                 </div>
 
                 <div className='user-cards'>
-                    <h2>User Requests</h2>
-                    <div className='user-cards__status'>
-                        <div className='user-cards--accepted'>Accepted: {
+                    <h2 className='text-center'>User Requests</h2>
+                    <div className='user-cards__status  text-center'>
+                        <div className='text-center user-cards--accepted'>Accepted: {
                             cards.filter((card) => card.accepted).length}</div>
                         <div className='user-cards--open'>Open: {cards.filter((card) => !card.accepted).length
                         }</div>

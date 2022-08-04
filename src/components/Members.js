@@ -11,7 +11,7 @@ export default function Members({ env }) {
             .then(data => setMembers(data))
 
     }, []);
-    console.log(members)
+    //console.log(members)
 
     const membersArr = members.map((member) => (
 
@@ -26,7 +26,7 @@ export default function Members({ env }) {
 
     return (
         <div>
-            <h1>Members</h1>
+            <h1 className="text-center">Members</h1>
 
             {membersArr}
         </div>

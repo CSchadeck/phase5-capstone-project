@@ -25,7 +25,6 @@ function App() {
      fetch('/me').then((r) => {
       if (r.ok) {
         r.json().then((user) => setUser(user));
-        console.log(user)
       }
     });
   }, []);
@@ -39,7 +38,7 @@ function App() {
             <Route exact path="/" element={<Home user={user} env={env} />} />
             <Route path="/Requests" element={<Requests user={user} setUser={setUser} env={env} />} />
             <Route path="/Members" element={<Members setUser={setUser} env={env} />} />
-            <Route path="/Post" element={<Post env={env} />} />
+            <Route path="/Post" element={<Post env={env} user={user}/>} />
             <Route path="/profile" element={<UserProfile user={user} setUser={setUser} env={env} />} />
           </Routes>
 

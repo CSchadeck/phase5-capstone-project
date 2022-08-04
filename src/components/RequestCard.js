@@ -25,15 +25,15 @@ function RequestCard({ props, env, handleUpdatedRequest }) {
 
     return (
         <div className={`request_card ${visible}`}>
-            <h3 >{props.title}</h3>
-            <div>
-                <img className='post-image' src={props.image}></img>
-            </div>
-            <div >{props.user.username}</div>
-            <div >{props.description}</div>
-            <div >{new Date(props.start_date).toLocaleString()}</div>
-            <div >{new Date(props.end_date).toLocaleString()}</div>
-            <button className="button" onClick={acceptHandler}>Can you help?🐾</button>
+        <h3 className='request_card--title'>{props.title}</h3>
+        <div className='request_card--image'>
+            <img className='post-image' src={props.image}></img>
+        </div>
+        <div className='request_card--owner'>{props.user.username}</div>
+        <div className='request_card--description'>{props.description}</div>
+        <div className='request_card--start'>Start: {new Date(props.start_date).toLocaleString()}</div>
+        <div className='request_card--end'>End: {new Date(props.end_date).toLocaleString()}</div>
+        <button className='request_card--button button' onClick={acceptHandler}>Can you help?</button>
         </div>
 
     );

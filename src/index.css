@@ -44,15 +44,15 @@ body {
     text-shadow: #009f78;
 }
 
-.pup-gif {}
-
 /*Navbar*/
 .site_title {
     color: white;
     font-size: 2rem;
 }
 .container {
-    margin: 1rem;
+    margin: 0 auto;
+    padding: 1rem;
+    max-width: 1024px;
 }
 
 .navbar {
@@ -142,18 +142,35 @@ form {
     transition: all 0.25s cubic-bezier(0.4, 0, 1, 1);
 }
 
+.post-sent #post-form {
+    display: none;
+}
+.post--thank-you{
+    display: none;
+    max-width: 23.75rem;
+    text-align: center;
+    margin: auto;
+    padding: 1rem;
+    background: #fff;;
+    border-radius: 3px;
+    box-shadow: 0 15px 35px rgb(50 50 93 / 10%), 0 5px 15px rgb(187 229 193 / 44%);
+}
+.post-sent .post--thank-you {
+    display: block;
+}
+
 /*Login form */
 .login-label {
-    display: inline-block;
+    display: block;
     margin-bottom: .5rem;
-    font-size: .75rem;
+    margin-top: .5rem;
     text-transform: uppercase;
     touch-action: manipulation;
 }
 
 .login-input {
     display: block;
-    padding: 0.5rem 0.75rem;
+    padding: 1rem 1rem;
     width: 100%;
     font-size: 1rem;
     line-height: 1.25;
@@ -163,7 +180,7 @@ form {
     background-clip: padding-box;
     border-top: 0;
     border-right: 0;
-    border-bottom: 1px solid #eee;
+    border-bottom: 2px solid #eee;
     border-left: 0;
     border-radius: 5px;
     transition: all 0.25s cubic-bezier(0.4, 0, 1, 1);
@@ -179,12 +196,11 @@ form {
 }
 
 .signup-label {
-    display: inline-block;
+    display: block;
     margin-bottom: .5rem;
-    font-size: .75rem;
+    margin-top: .5rem;
     text-transform: uppercase;
     touch-action: manipulation;
-
 }
 
 .signup-input {
@@ -211,27 +227,61 @@ form {
 /*Post/Request card*/
 
 .request_card {
-    height: fit-content;
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 8px 0px; 
+    grid-template-areas: 
+        "request_card--title request_card--title"
+        "request_card--image request_card--image"
+        "request_card--owner request_card--owner"
+        "request_card--description request_card--description"
+        "request_card--start request_card--end"
+        "request_card--button request_card--button"; 
+    flex-direction: column;
     max-width: 650px;
+    padding: 1rem;
     margin: 16px auto;
     border-radius: 16px;
-    box-shadow: 1px 1px 3px rgba(17, 19, 18, 0.3);
-    padding: 1rem;
-    color: rgb(12, 85, 71);
     border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 1px 1px 3px rgba(17, 19, 18, 0.3);
+    color: rgb(12, 85, 71);
     background: rgb(227, 243, 233);
     transition: background-color 1s ease-out;
 }
 
-.request_card--accepted {
-    background: palegreen;
+.request_card--title { 
+    grid-area: request_card--title;
+    font-weight: 700;
+ }
+.request_card--image { 
+    grid-area: request_card--image; 
+}
+.request_card--owner { 
+    grid-area: request_card--owner; 
+    font-weight: 700;
+}
+.request_card--description { grid-area: request_card--description; }
+.request_card--start { 
+    grid-area: request_card--start; 
+    background: #fff;
+    padding: .5rem 1rem;
+    border-radius: 5px 0 0 5px;
+}
+.request_card--end { 
+    grid-area: request_card--end; 
+    background: #fff;
+    padding: .5rem 1rem;
+    border-radius: 0 5px 5px 0;
+}
+.request_card--button { 
+    grid-area: request_card--button; 
 }
 
 .post-image {
-    height: 300px;
-    width: auto;
     border-radius: 50%;
-
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    object-fit: cover;
 }
 
 .button {
@@ -267,10 +317,28 @@ form {
     transition: background-color 1s ease-out;
 }
 
+.request_card_name, .request_card h3 {
+    margin-top: 0;
+}
+
+.member_card_username, .request_card h3 {
+    margin-top: 0;
+}
+
 /* Profile */
+ .user-card{
+    height: fit-content;
+    width: 650px;
+    margin: auto;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    padding: 16px;
+ }
+ .user-cards_status{
+}
+ 
 
-
-/* utilities */
+/* utilities */s
 .hide {
     display: none;
 }
@@ -281,5 +349,6 @@ form {
     display: block;
     margin: auto
 }
+.pup-gif {
 
-/* footer */
+}
